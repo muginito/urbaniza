@@ -12,9 +12,9 @@ jobs:
   continuous-integration:
     runs-on: ubuntu-latest
     steps:
-      - uses: action/checkout@v3
+      - uses: action/checkout@v4
       - name: Action Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v4
         with: 
           node-version: 16.x
 
