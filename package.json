@@ -5,7 +5,10 @@
   "repository": "https://github.com/muginito/urbaniza.git",
   "author": "muginito <miguel.vramospro@gmail.com>",
   "license": "MIT",
+  "type": "module",
   "devDependencies": {
+    "@commitlint/cli": "^19.2.2",
+    "@commitlint/config-conventional": "^19.2.2",
     "cz-conventional-changelog": "^3.3.0"
   },
   "config": {
@@ -15,5 +18,13 @@
   },
   "scripts": {
     "commit": "git-cz"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
+    }
+  },
+  "dependencies": {
+    "husky": "^9.0.11"
   }
 }
