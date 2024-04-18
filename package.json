@@ -1,0 +1,19 @@
+{
+  "name": "urbaniza",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/muginito/urbaniza.git",
+  "author": "muginito <miguel.vramospro@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "cz-conventional-changelog": "^3.3.0"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  },
+  "scripts": {
+    "commit": "git-cz"
+  }
+}
