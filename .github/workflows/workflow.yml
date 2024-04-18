@@ -1,0 +1,30 @@
+---
+name: Continuous Integration
+
+on: 
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  check-for-cc:
+    runs-on: ubuntu-latest
+    steps:
+      - name: check-for-cc
+        id: check-for-cc
+        uses: agenthunt/conventional-commit-checker-action@v2.0.0
+
+  continuous-integration:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: action/checkout@v3
+      - name: Action Node.js
+        uses: actions/setup-node@v2
+        with: 
+          node-version: 16.x
+      - name: intall, build, test
+        run: |
+          npm install
+          npm run build
+          npm run test
+---
