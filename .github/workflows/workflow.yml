@@ -20,9 +20,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install @commitlint/{cli,config-conventional} husky
-
-      - name: Run Commitlint
-        run: npx commitlint --from=HEAD~1
           
  #     - name: install, build, test
  #       run: |

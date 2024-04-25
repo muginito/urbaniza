@@ -7,9 +7,10 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
-    "@commitlint/cli": "^19.2.2",
+    "@commitlint/cli": "^19.3.0",
     "@commitlint/config-conventional": "^19.2.2",
-    "cz-conventional-changelog": "^3.3.0"
+    "cz-conventional-changelog": "^3.3.0",
+    "husky": "^9.0.11"
   },
   "config": {
     "commitizen": {
@@ -17,14 +18,13 @@
     }
   },
   "scripts": {
-    "commit": "git-cz"
+    "commit": "git-cz",
+    "prepare": "husky",
+    "commitlint": "commitlint --edit"
   },
   "husky": {
     "hooks": {
       "commit-msg": "commitlint -E HUSKY_GIT_PARAMS"
     }
-  },
-  "dependencies": {
-    "husky": "^9.0.11"
   }
 }
