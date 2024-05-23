@@ -190,7 +190,7 @@ test('Verifica se as obras são adicionadas corretamente', () => {
 });
 
 test ('Teste de Consulta de Obras', () => {
-    // Mockup das obras
+    
     const obrasMockup = [
         {
             status: 'Concluída',
