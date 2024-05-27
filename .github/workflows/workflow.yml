@@ -6,7 +6,7 @@ on:
       - dev
   
   pull_request:
-    pull_resquest:
+    branch:
       - dev
 
 jobs:
