@@ -1,5 +1,3 @@
-
-
 class Obra {
     constructor(titulo, endereco, dataInicio, dataFim, descricao) {
         this.titulo = titulo;
