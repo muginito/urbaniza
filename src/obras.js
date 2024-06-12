@@ -61,4 +61,3 @@ function listarObras() {
 }
 
 module.exports = { adicionarObra, removerObra, existeObra, listarObras, atualizarObra,obras };
-export { adicionarObra, removerObra, existeObra, listarObras, atualizarObra, obras }
