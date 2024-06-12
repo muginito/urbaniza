@@ -24,7 +24,8 @@
     "commit": "git-cz",
     "prepare": "husky",
     "commitlint": "commitlint --edit",
-    "test": "jest"
+    "test": "jest",
+    "jest-coverage": "jest --coverage"
   },
   "husky": {
     "hooks": {
