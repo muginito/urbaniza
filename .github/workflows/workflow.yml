@@ -1,11 +1,13 @@
 on: 
   push:
-    branch:
+    branches:
       - dev
+      - tests
   
   pull_request:
-    branch:
+    branches :
       - dev
+      - tests
 
 jobs:
   continuous-integration:
