@@ -23,9 +23,6 @@ jobs:
 
       - name: Install commitlint
         run: npm install --save-dev @commitlint/{config-conventional,cli}
-        
-      - name: Create commitlint config file
-        run: echo "module.exports = { extends: ['@commitlint/config-conventional'] };" > commitlint.config.js
 
       - name: Validate last commit on push
         if: github.event_name == 'push'
