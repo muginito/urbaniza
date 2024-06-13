@@ -14,34 +14,29 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      
-      - name: Setup Node.js
+      - name: Action Node.js
         uses: actions/setup-node@v4
         with: 
           node-version: 18.x
 
-      # name: Install dependencies
-      #  run: npm install
-
-      - name: Install commitlint
-        run: npm install --save-dev @commitlint/{config-conventional,cli}
-
-      - name: Validate last commit on push
-        if: github.event_name == 'push'
-        run: |
-          LAST_COMMIT=$(git rev-parse HEAD)
-          npx commitlint --from ${LAST_COMMIT}~1 --to ${LAST_COMMIT} --verbose
+      # - name: Install dependencies
+      #   run: npm install
       
-      - name: Validate all commits in the pull request
-        if: github.event_name == 'pull_request'
+      - name: Install commitlint
         run: |
-          BASE_COMMIT=${{ github.event.pull_request.base.sha }}
-          HEAD_COMMIT=${{ github.event.pull_request.head.sha }}
-          npx commitlint --from ${BASE_COMMIT} --to ${HEAD_COMMIT} --verbose
+          npm install conventional-changelog-conventionalcommits
+          npm install commitlint@latest
+      
+      - name: Validate current commit (last commit) with commitlint
+        if: github.event_name == 'push'
+        run: npx commitlint --last --verbose
 
-      # Uncomment the following steps if needed
-      # - name: install, build, test
-      #   run: |
-      #     npm install
-      #     npm run build
-      #     npm run test
+      - name: Validate PR commits with commitlint
+        if: github.event_name == 'pull_request'
+        run: npx commitlint --from ${{ github.event.pull_request.head.sha }}~${{ github.event.pull_request.commits }} --to ${{ github.event.pull_request.head.sha }} --verbose
+          
+ #     - name: install, build, test
+ #       run: |
+ #         npm install
+ #         npm run build
+ #         npm run test
