@@ -1,10 +1,10 @@
 on: 
   push:
-    branches:
+    branch:
       - dev
   
   pull_request:
-    branches:
+    branch:
       - dev
 
 jobs:
@@ -18,8 +18,8 @@ jobs:
         with: 
           node-version: 18.x
 
-      - name: Install dependencies
-        run: npm install
+      # name: Install dependencies
+      #  run: npm install
 
       - name: Install commitlint
         run: npm install --save-dev @commitlint/{config-conventional,cli}
