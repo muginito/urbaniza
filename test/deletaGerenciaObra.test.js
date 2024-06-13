@@ -1,4 +1,4 @@
-import { Obra, GerenciaObra } from '../src/gerenciaobra';
+import { GerenciaObra } from '../src/gerenciaObra';
 
 describe('GerenciaObra Delete', () => {
     let gerencia;
@@ -17,5 +17,12 @@ describe('GerenciaObra Delete', () => {
         console.log = jest.fn();
         gerencia.deletaObra(999);
         expect(console.log).toHaveBeenCalledWith('Obra com ID 999 não encontrada.');
+    });
+
+    test('Deve manter a lista inalterada ao tentar deletar obra inexistente', () => {
+        gerencia.criaObra(1, 'Construção A', 'Rua A, 123', '2023-01-01', '2023-12-31', 'Descrição da obra A');
+        gerencia.deletaObra(999);
+        const obras = gerencia.listaObras();
+        expect(obras.length).toBe(1);
     });
 });

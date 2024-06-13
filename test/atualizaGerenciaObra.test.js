@@ -1,4 +1,4 @@
-import { Obra, GerenciaObra } from '../src/gerenciaobra';
+import { GerenciaObra } from '../src/gerenciaObra';
 
 describe('GerenciaObra Update', () => {
     let gerencia;
