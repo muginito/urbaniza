@@ -8,7 +8,3 @@
 - Marlon Vitor
 - Matheus Moutinho
 - Miguel Vasconcelos
-
-## Etapas
-
-## Teste
